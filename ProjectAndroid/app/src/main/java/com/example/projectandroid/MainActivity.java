@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void verifyLogin(String username, String password){
-        if (username.equals("admin") && password.equals("pass")){
+        if (username.equals("") && password.equals("")){
             Intent intent = new Intent(MainActivity.this, HalamanUtama.class);
             startActivity(intent);
         }else{
