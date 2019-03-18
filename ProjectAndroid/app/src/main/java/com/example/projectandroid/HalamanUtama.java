@@ -1,5 +1,6 @@
 package com.example.projectandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +22,7 @@ public class HalamanUtama extends AppCompatActivity
     private EditText jari;
     private Button luas;
     private TextView hasil;
+    private Button hasil2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +51,20 @@ public class HalamanUtama extends AppCompatActivity
 
         jari = findViewById(R.id.etJarijari);
         luas = findViewById(R.id.btnLuas);
+        hasil2 = findViewById(R.id.btnHasil);
         hasil = findViewById(R.id.tvHasil);
 
         luas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 hasilJari(jari.getText().toString());
+            }
+        });
+
+        hasil2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hasilJari2(jari.getText().toString());
             }
         });
     }
@@ -66,6 +76,14 @@ public class HalamanUtama extends AppCompatActivity
         hasil.setText("Luas Lingkaran = " + String.valueOf(hasilakhir));
     }
 
+
+    private void hasilJari2(String jari){
+        double hasilakhir;
+        int jarijari = Integer.parseInt(jari);
+        hasilakhir = 3.14 * (jarijari * jarijari);
+        Intent intent = new Intent(HalamanUtama.this, Utama.class);
+        startActivity(intent.putExtra("HASIL", hasilakhir));
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
