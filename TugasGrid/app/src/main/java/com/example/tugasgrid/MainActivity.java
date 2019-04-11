@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ListView lv;
-    String[] daftarBarang = {"Pop Miew", "Susu", "Energen", "Kopi"};
+    String[] daftarBarang = {"Pop Mie", "Susu", "Energen", "Kopi"};
     String[] idBarang = {"p01", "p02", "p03", "p04", "p05"};
     String[] deskripsiBarang = {
             "Harga= 5k",
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             "Harga= 1k",
     };
     int[] profilBarang = {
-
+        R.drawable.popmie,R.drawable.susu,R.drawable.energen,R.drawable.kopiabc
     };
 
     @Override
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(
                         getApplicationContext(),
                         daftarBarang[position],
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_LONG
                 ).show();
                 int lokasi = position;
                 Intent intent = new Intent(getApplicationContext(), daftrabarang_activity.class);

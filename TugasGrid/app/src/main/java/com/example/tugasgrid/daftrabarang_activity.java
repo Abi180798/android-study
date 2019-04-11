@@ -29,15 +29,15 @@ public class daftrabarang_activity extends AppCompatActivity {
         imgprofil = findViewById(R.id.itemProfil);
         btn = findViewById(R.id.btnedit);
 
-        final Intent intent = getIntent();
+        Intent intent = getIntent();
         getposisi = intent.getIntExtra("Posisi", 0);
         String getDataBrg = intent.getStringExtra("nama");
         String getDataId = intent.getStringExtra("id");
         String getDesc = intent.getStringExtra("desc");
         int getDataImg = intent.getIntExtra("image", 0);
 
-        databrg.setText("Nama"+ getDataBrg);
-        dataid.setText("ID" + getDataId);
+        databrg.setText("Nama: "+ getDataBrg);
+        dataid.setText("ID: " + getDataId);
         deskripsi.setText(getDesc);
 
         btn.setOnClickListener(new View.OnClickListener() {
