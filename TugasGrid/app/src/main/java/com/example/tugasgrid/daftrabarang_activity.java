@@ -39,6 +39,7 @@ public class daftrabarang_activity extends AppCompatActivity {
         databrg.setText("Nama: "+ getDataBrg);
         dataid.setText("ID: " + getDataId);
         deskripsi.setText(getDesc);
+        imgprofil.setImageResource(getDataImg);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

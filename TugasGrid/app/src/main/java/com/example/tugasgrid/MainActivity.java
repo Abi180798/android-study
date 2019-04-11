@@ -44,13 +44,12 @@ public class MainActivity extends AppCompatActivity {
                         daftarBarang[position],
                         Toast.LENGTH_LONG
                 ).show();
-                int lokasi = position;
                 Intent intent = new Intent(getApplicationContext(), daftrabarang_activity.class);
-                intent.putExtra("Posisi", lokasi);
-                intent.putExtra("nama", daftarBarang);
-                intent.putExtra("id", idBarang);
-                intent.putExtra("desc", deskripsiBarang);
-                intent.putExtra("image", profilBarang);
+                intent.putExtra("Posisi", position);
+                intent.putExtra("nama", daftarBarang[position]);
+                intent.putExtra("id", idBarang[position]);
+                intent.putExtra("desc", deskripsiBarang[position]);
+                intent.putExtra("image", profilBarang[position]);
                 startActivity(intent);
             }
         });
